@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
+FROM centos:latest
 
 RUN yum install epel-release -y \
   python39 \
