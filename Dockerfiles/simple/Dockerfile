@@ -1,6 +1,15 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
+FROM centos:latest
 
-RUN apk update \ 
-  && apk add openjdk11 \
-  && dotnet tool install --global dotnet-sonarscanner \
-  && apk add zip
+RUN yum install epel-release -y \
+  python39 \
+  python39-pip
+RUN pip3 install pyyaml \
+  requests \
+  snowflake \
+  snowflake-connector-python \
+  msal \
+  msal_extensions \
+  pandas \
+  azure-keyvault-secrets \
+  azure-keyvault-keys \
+  azure-identity
